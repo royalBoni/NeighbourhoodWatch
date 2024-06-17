@@ -59,7 +59,7 @@ const SinglePostPage = (param) => {
   const { reportersData, comments, reports } = useDataContext();
   const returnLocationFromCordinates = () => {
     setDefaults({
-      key: process.env.GOOGLE_MAP_API_KEY, // Your API key here.
+      key: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY, // Your API key here.
       language: "en", // Default language for responses.
       region: "es", // Default region for responses.
     });
@@ -94,7 +94,7 @@ const SinglePostPage = (param) => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY,
   });
 
   const [map, setMap] = React.useState(null);

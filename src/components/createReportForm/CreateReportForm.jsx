@@ -56,7 +56,7 @@ const CreateReportForm = () => {
   const [location, setLocation] = useState();
 
   setDefaults({
-    key: process.env.GOOGLE_MAP_API_KEY, // Your API key here.
+    key: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY, // Your API key here.
     language: "en", // Default language for responses.
     region: "es", // Default region for responses.
   });

@@ -88,7 +88,7 @@ const FormComponent = () => {
   };
 
   return (
-    <GoogleOAuthProvider clientId="29153532189-h38m88p59h235g575fm36vtd986uf52s.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
       <div className={styles.container}>
         <div className={styles.containerItem}>other side</div>
         <div className={styles.containerItem}>

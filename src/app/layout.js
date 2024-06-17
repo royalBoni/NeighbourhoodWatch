@@ -9,7 +9,6 @@ import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import styles from "./layout.module.css";
 import Activity from "../components/activityComponent/Activity";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
