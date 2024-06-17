@@ -35,7 +35,6 @@ const ReportCard = ({ report }) => {
   const storedUserData = sessionStorage.getItem("user");
   const storedUser = storedUserData ? JSON.parse(storedUserData) : null;
 
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY);
   const {
     openOrCloseAlertDialog,
     specifyAction,

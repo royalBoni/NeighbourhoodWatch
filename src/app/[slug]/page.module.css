@@ -173,6 +173,25 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .locationAndDate {
+    display: flex;
+    align-items: unset;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .title {
+    color: rebeccapurple;
+    width: 100%;
+  }
+
+  .time {
+    width: 100%;
+    justify-content: unset;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+  }
 }
 
 /* || LARGE */

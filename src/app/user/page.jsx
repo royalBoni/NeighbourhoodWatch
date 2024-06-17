@@ -9,22 +9,26 @@ import {
   BookCopy,
   BadgeCent,
   Settings,
+  HandHelping,
 } from "lucide-react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useDataContext } from "../store/DataContext";
 import ReportCard from "../../components/reportCard/ReportCard";
+import { Menu } from "lucide-react";
 
 const UserPage = () => {
   const [user, setUser] = useState();
-  /*   const storedUserData = sessionStorage.getItem("user");
-  const user = storedUserData ? JSON.parse(storedUserData) : null; */
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   useEffect(() => {
-    const storedUser = sessionStorage.getItem("user") === "true";
+    const storedUser = JSON.parse(sessionStorage.getItem("user"));
     setUser(storedUser);
   }, []);
 
   const { reports, comments, votes } = useDataContext();
+
+  console.log(reports);
 
   const [componentToRender, setComponentToRender] = useState("Reports");
   const [reportItem, setReportItem] = useState("All");
@@ -120,6 +124,38 @@ const UserPage = () => {
 
   return (
     <div className={styles.container}>
+      {mobileMenu && (
+        <div className={styles.mobileMenu}>
+          {listItems.map((item) => (
+            <div
+              key={item}
+              onClick={() => setComponentToRender(item)}
+              className={styles.mobileMenuItem}
+              style={{ color: item === componentToRender ? "white" : "" }}
+            >
+              {item === "Reports" ? (
+                <BookCopy />
+              ) : item === "Analytics" ? (
+                <BarChart />
+              ) : item === "Points Earned" ? (
+                <BadgeCent />
+              ) : (
+                <Users />
+              )}
+              {item}
+            </div>
+          ))}
+
+          <div
+            className={styles.settings}
+            onClick={() => setComponentToRender("Settings")}
+            style={{ color: componentToRender === "Settings" ? "white" : "" }}
+          >
+            <Settings /> Settings
+          </div>
+        </div>
+      )}
+
       <div className={styles.upper}>{componentToRender.toUpperCase()}</div>
       <div className={styles.lower}>
         <div className={styles.left}>
@@ -139,17 +175,24 @@ const UserPage = () => {
                   <span style={{ color: "red" }}>
                     <Star fill="red" strokeWidth={0} /> {user?.badge} Profile
                   </span>
-                ) : user?.badge === "pro" ? (
+                ) : user?.badge === "gem" ? (
                   <span style={{ color: "yellow" }}>
                     <Gem fill="yellow" strokeWidth={0} /> {user?.badge} Profile
                   </span>
                 ) : (
-                  <></>
+                  <span style={{ color: "gray" }}>
+                    <HandHelping fill="gray" strokeWidth={0} /> Associate
+                    Profile
+                  </span>
                 )}{" "}
               </span>
             </div>
           </div>
           <div className={styles.user}>
+            <Menu
+              className={styles.menu}
+              onClick={() => setMobileMenu(!mobileMenu)}
+            />
             <div className={styles.userItems}>
               {listItems.map((item) => (
                 <div

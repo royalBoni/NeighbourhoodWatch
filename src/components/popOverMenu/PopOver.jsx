@@ -24,9 +24,7 @@ const PopOver = () => {
     <div className={styles.container}>
       <div className={styles.titleClose}>
         <h1 className={styles.title}>
-          {alertAction === "activity"
-            ? "Pages to Explore"
-            : "Select Post Action to Take"}
+          {alertAction === "activity" ? "Pages to Explore" : "Action to Take"}
         </h1>
 
         <button>
@@ -47,13 +45,13 @@ const PopOver = () => {
         ) : (
           <>
             <Button onClick={() => selectionFormActionToPerson("report")}>
-              Report A Problem
+              Report
             </Button>
             <Button onClick={() => selectionFormActionToPerson("thread")}>
-              Start a Thread
+              Thread
             </Button>
             <Button onClick={() => selectionFormActionToPerson("campaign")}>
-              Start a Campagn
+              Campagn
             </Button>
           </>
         )}

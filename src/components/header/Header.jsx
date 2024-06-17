@@ -7,7 +7,8 @@ import { useAlertDialogContext } from "../../app/store/AlertDialog";
 import Link from "next/link";
 const Header = () => {
   //const [storedUser, setStoredUser] = useState(null);
-  const { openOrCloseAlertDialog, specifyAction } = useAlertDialogContext();
+  const { openOrCloseAlertDialog, specifyAction, alertAction } =
+    useAlertDialogContext();
   const [storedUser, setStoredUser] = useState();
 
   const setOperations = (operationId) => {
@@ -19,17 +20,10 @@ const Header = () => {
   const storedUser = storedUserData ? JSON.parse(storedUserData) : null; */
 
   useEffect(() => {
-    const storedUserData = sessionStorage.getItem("user") === "true";
+    const storedUserData = sessionStorage.getItem("user");
     setStoredUser(storedUserData);
-  }, []);
+  }, [openOrCloseAlertDialog, specifyAction, alertAction]);
 
-  /* useEffect(() => {
-    if (typeof sessionStorage !== "undefined") {
-      const storedUserData = sessionStorage.getItem("user");
-      setStoredUser(storedUserData ? JSON.parse(storedUserData) : null);
-    }
-  }, []);
-   */
   const logout = () => {
     sessionStorage.removeItem("user");
     window.location.reload(true);

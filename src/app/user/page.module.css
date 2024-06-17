@@ -3,8 +3,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 }
 
+.mobileMenu {
+  display: none;
+}
 .upper {
   background-color: var(--color-secondary);
   height: 30px;
@@ -34,6 +38,7 @@
   gap: 10px;
   border-bottom: 1px solid var(--color-shade);
   padding-bottom: 30px;
+  align-items: center;
 }
 
 .avatar {
@@ -55,6 +60,10 @@
   align-items: center;
   font-style: italic;
   gap: 3px;
+}
+
+.menu {
+  display: none;
 }
 
 .right {
@@ -123,7 +132,7 @@
 }
 
 .reportsDownItem {
-  width: 30%;
+  width: 48%;
 }
 
 .analytics {
@@ -136,4 +145,106 @@
 .analyticsItem {
   height: 100%;
   width: 50%;
+}
+
+@media screen and (max-width: 1400px) {
+  .left {
+    width: 35%;
+  }
+  .right {
+    width: 65%;
+  }
+  .reportsDownItem {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .analytics {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .analyticsItem {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* || LARGE */
+
+@media screen and (max-width: 992px) {
+  .left {
+    width: 25%;
+  }
+  .right {
+    width: 75%;
+  }
+}
+/* || MEDIUM */
+
+@media screen and (max-width: 768px) {
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: var(--color-shade);
+    height: calc(100% - 30px);
+    width: 70%;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .lower {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    background-color: var(--primary);
+    color: var(--color-shade);
+    width: 100%;
+    height: unset;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .userItems {
+    display: none;
+  }
+
+  .settings {
+    display: none;
+  }
+
+  .profile {
+    display: flex;
+    gap: 10px;
+    border-bottom: unset;
+    padding-bottom: unset;
+  }
+
+  .right {
+    width: 100%;
+  }
+}
+
+/* || SMALL */
+
+@media screen and (max-width: 576px) {
 }
