@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Graph from "../../components/Graph";
 import {
   Star,
@@ -16,8 +16,14 @@ import { useDataContext } from "../store/DataContext";
 import ReportCard from "../../components/reportCard/ReportCard";
 
 const UserPage = () => {
-  const storedUserData = sessionStorage.getItem("user");
-  const user = storedUserData ? JSON.parse(storedUserData) : null;
+  const [user, setUser] = useState();
+  /*   const storedUserData = sessionStorage.getItem("user");
+  const user = storedUserData ? JSON.parse(storedUserData) : null; */
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("user") === "true";
+    setUser(storedUser);
+  }, []);
+
   const { reports, comments, votes } = useDataContext();
 
   const [componentToRender, setComponentToRender] = useState("Reports");

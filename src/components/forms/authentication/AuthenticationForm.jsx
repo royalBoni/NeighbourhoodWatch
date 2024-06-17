@@ -71,7 +71,7 @@ const FormComponent = () => {
       } else {
         //loggedInUser(data);
         openOrCloseAlertDialog(false);
-        sessionStorage.setItem("user", JSON.stringify(data));
+        window.sessionStorage.setItem("user", JSON.stringify(data));
       }
     },
     onError: (error) => {
@@ -131,7 +131,7 @@ const FormComponent = () => {
                 const decoded = jwtDecode(credentialResponse?.credential);
                 console.log(decoded);
                 openOrCloseAlertDialog(false);
-                sessionStorage.setItem(
+                window.sessionStorage.setItem(
                   "user",
                   JSON.stringify({
                     id: decoded.sub,

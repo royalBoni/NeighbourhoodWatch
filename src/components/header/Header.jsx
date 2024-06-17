@@ -8,14 +8,20 @@ import Link from "next/link";
 const Header = () => {
   //const [storedUser, setStoredUser] = useState(null);
   const { openOrCloseAlertDialog, specifyAction } = useAlertDialogContext();
+  const [storedUser, setStoredUser] = useState();
 
   const setOperations = (operationId) => {
     openOrCloseAlertDialog(true);
     specifyAction(operationId);
   };
 
-  const storedUserData = sessionStorage.getItem("user");
-  const storedUser = storedUserData ? JSON.parse(storedUserData) : null;
+  /* const storedUserData = sessionStorage.getItem("user");
+  const storedUser = storedUserData ? JSON.parse(storedUserData) : null; */
+
+  useEffect(() => {
+    const storedUserData = sessionStorage.getItem("user") === "true";
+    setStoredUser(storedUserData);
+  }, []);
 
   /* useEffect(() => {
     if (typeof sessionStorage !== "undefined") {

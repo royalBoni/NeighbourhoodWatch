@@ -18,7 +18,6 @@ export const GET = async (req: Request) => {
       })
     );
 
-    console.log(processedUsers);
     return NextResponse.json(processedUsers);
   } catch (err) {
     console.error(err);

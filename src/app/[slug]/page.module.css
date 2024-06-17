@@ -105,9 +105,9 @@
 
 .time {
   width: 40%;
-  justify-content: end;
+  justify-content: flex-end;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 5px;
 }
 

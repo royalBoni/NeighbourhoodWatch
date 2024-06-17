@@ -9,7 +9,6 @@ export const GET = async (req: Request) => {
   try {
     connectToDb();
     const comment = await ReportComment.find();
-    console.log(comment);
     return NextResponse.json(comment);
   } catch (err) {
     console.log(err);
