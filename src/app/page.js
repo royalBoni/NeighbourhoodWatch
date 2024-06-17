@@ -24,7 +24,7 @@ export default function Home() {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyCJQ09aSMpFlGyonpuovdsEWLrJAh2nN_Y",
+    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY,
   });
 
   const [map, setMap] = React.useState(null);
@@ -159,6 +159,7 @@ export default function Home() {
                 value={searchItems}
                 onChange={(event) => setSearchItems(event.target.value)}
                 className={styles.select}
+                key={item}
               >
                 {" "}
                 <option>{item.listName}</option>
@@ -199,6 +200,7 @@ export default function Home() {
                         lat: Number(item?.latitude),
                         lng: Number(item?.longitude),
                       }}
+                      key={item.id}
                     />
                   ))}
               </GoogleMap>

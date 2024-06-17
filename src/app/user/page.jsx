@@ -183,6 +183,7 @@ const UserPage = () => {
                   {" "}
                   {solveStatus.map((item) => (
                     <div
+                      key={item}
                       className={styles.reportsTopItem}
                       style={{
                         color: reportItem === item && "white",

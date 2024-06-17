@@ -40,12 +40,12 @@ const AlertDialogComponent = () => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyCJQ09aSMpFlGyonpuovdsEWLrJAh2nN_Y",
+    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY,
   });
 
   const returnLocationFromCordinates = () => {
     setDefaults({
-      key: "AIzaSyCJQ09aSMpFlGyonpuovdsEWLrJAh2nN_Y", // Your API key here.
+      key: process.env.GOOGLE_MAP_API_KEY, // Your API key here.
       language: "en", // Default language for responses.
       region: "es", // Default region for responses.
     });
