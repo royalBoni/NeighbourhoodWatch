@@ -1,0 +1,210 @@
+.container {
+  height: calc(100vh - 70px);
+  background-color: var(--color-shade);
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-secondary);
+}
+
+.leftLeft {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.leftContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bullet {
+  background-color: var(--color-secondary);
+  color: var(--primary);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  min-height: 50px;
+  padding: 10px;
+}
+
+.bulletSocials {
+  display: flex;
+  gap: 10px;
+}
+
+.status {
+  background-color: var(--primary);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.socialsContainerItem {
+  background-color: var(--color-shade);
+  color: var(--primary);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.socialsContainerItem:hover {
+  color: var(--color-shade);
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+.socialsContainerItemMap {
+  display: none;
+}
+
+.mapData {
+  width: 50%;
+}
+
+.imageContainer {
+  width: 100%;
+  max-height: 50%;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  border-top: 1px solid var(--primary);
+}
+
+.infoContainer h3 {
+  color: red;
+}
+
+.locationAndDate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  color: rebeccapurple;
+  width: 60%;
+}
+
+.time {
+  width: 40%;
+  justify-content: end;
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+
+.descriptionTitle {
+  color: red;
+}
+
+.category {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.commentInput {
+  padding-block: 10px;
+  padding-inline: 20px;
+  height: 60px;
+  border-top: 1px solid var(--color-shade);
+}
+
+.commentInputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-shade);
+  height: 100%;
+  border-radius: 50px;
+}
+
+.commentInput input {
+  height: 100%;
+  width: 90%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-inline: 15px;
+  color: var(--color-primary);
+}
+
+.sendBtn {
+  width: 10%;
+  height: 90%;
+  background-color: var(--color-secondary);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1400px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+/* || LARGE */
+
+@media screen and (max-width: 992px) {
+}
+/* || MEDIUM */
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .socialsContainerItemMap {
+    background-color: var(--color-shade);
+    color: var(--primary);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .mapData {
+    display: none;
+  }
+}
+
+/* || SMALL */
+
+@media screen and (max-width: 576px) {
+}

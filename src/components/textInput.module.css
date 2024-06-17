@@ -1,0 +1,10 @@
+/* w-full outline-pink-500 rounded-lg px-3 py-1.5 shadow */
+.input {
+  width: 100%;
+
+  padding: 8px;
+  outline: none;
+  border: none;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}

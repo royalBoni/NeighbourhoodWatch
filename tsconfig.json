@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "src/app/[slug]/page.jsx", "src/app/api/reports/[slug]/route.js", "src/app/api/reports/route.js", "src/app/api/thread/route.js", "src/components/forms/authentication/AuthenticationForm.jsx", "src/app/api/votes/route.js", "src/app/api/votes/[slug]/route.js", "src/components/commentCard/commentCard.jsx", "src/lib/actions.js", "src/components/form-fields/TextArea.jsx", "src/components/createReportForm/CreateRecipeForm.jsx", "src/components/TextInput.jsx", "src/components/postUser/postUser.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

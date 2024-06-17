@@ -1,0 +1,71 @@
+.header {
+  background-color: var(--primary);
+  color: var(--color-primary);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-inline: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.navItems li {
+  padding: 10px;
+}
+
+.navItems li:hover {
+  color: var(--color-shade);
+}
+
+.brand {
+  border: 2px solid var(--color-shade);
+  color: var(--color-primary);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.reportButton {
+  background-color: var(--color-shade);
+  color: var(--color-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.user {
+  background-color: var(--color-shade);
+  color: var(--color-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-weight: bold;
+  border: 1px solid var(--color-primary);
+}
+
+.reportButton:hover,
+.user:hover {
+  color: var(--color-primary);
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .logout {
+    display: none;
+  }
+}

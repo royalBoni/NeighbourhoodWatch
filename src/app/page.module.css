@@ -1,0 +1,269 @@
+.main {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+}
+
+.bulletCarousel {
+  background-color: var(--color-secondary);
+  color: var(--primary);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+}
+
+.down {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+}
+
+.downTop {
+  width: 100%;
+  height: auto;
+  background-color: var(--primary);
+  padding-inline: 20px;
+  color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.searchContainer {
+  display: flex;
+  background-color: var(--color-shade);
+  background-color: var(--color-shade);
+  color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+}
+
+.searchContainer input {
+  background-color: var(--color-shade);
+  padding: 7px;
+  border: none;
+  outline: none;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.searchContainer input::placeholder {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.inputFields {
+  display: flex;
+  gap: 10px;
+}
+
+.inputFields select {
+  background-color: var(--color-shade);
+  color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.inputFields select:hover {
+  color: var(--color-shade);
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+.inputFields select option {
+  padding: 100px;
+  font-size: 20px;
+  background-color: var(--primary);
+}
+
+.menuButton {
+  display: none;
+}
+
+.applyButton {
+  background-color: var(--color-primary);
+  color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.applyButton:hover {
+  background-color: var(--color-shade);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.downDown {
+  display: flex;
+  /* height: 80vh; */
+  height: calc(100vh - 200px);
+}
+
+.left {
+  width: 40%;
+  position: static;
+  min-height: inherit;
+  background-color: var(--color-shade);
+}
+
+.leftItems {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.leftItemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-shade);
+  margin-left: 15px;
+  gap: 10px;
+}
+
+.listItem {
+  display: flex;
+  gap: 10px;
+}
+
+.right {
+  background-color: var(--color-shade);
+  width: 60%;
+  min-height: inherit;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.rightLoader {
+  min-height: inherit;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+
+.rightContentItem {
+  width: 48%;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .vercelLogo {
+    filter: invert(1);
+  }
+
+  .logo {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .left {
+    width: 30%;
+  }
+  .right {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .rightContentItem {
+    width: 100%;
+  }
+
+  .left {
+    width: 40%;
+  }
+
+  .right {
+    width: 60%;
+  }
+}
+
+/* || LARGE */
+
+@media screen and (max-width: 992px) {
+}
+/* || MEDIUM */
+
+@media screen and (max-width: 768px) {
+  .bulletCarousel {
+    display: none;
+  }
+
+  .down {
+    height: calc(100vh - 70px);
+  }
+
+  .downDown {
+    height: calc(100vh - 150px);
+  }
+
+  .left {
+    display: none;
+  }
+
+  .right {
+    width: 100%;
+  }
+  .inputFields {
+    display: none;
+  }
+  .menuButton {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+/* || SMALL */
+
+@media screen and (max-width: 576px) {
+}

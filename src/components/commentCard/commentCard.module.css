@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  background-color: var(--color-shade);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+}
+
+.containerItem:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imageAndName {
+  display: flex;
+  gap: 10px;
+}
+
+.image {
+  border-radius: 50px;
+}

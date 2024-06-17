@@ -1,0 +1,141 @@
+.container {
+  width: 60%;
+  height: 100%;
+  background-color: var(--color-shade);
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.titleClose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px;
+  border-color: var(--color-primary);
+}
+
+.title {
+  color: var(--primary);
+}
+
+.container button {
+  background-color: var(--primary);
+  padding: 10px;
+  border-radius: 25px;
+  color: var(--color-primary);
+  border-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container button:hover {
+  background-color: var(--color-shade);
+  color: var(--color-primary);
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputImage {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px dashed var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+.previewImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  border: 2px dashed var(--color-primary);
+}
+
+.previewDeleteBtn {
+  position: absolute;
+  padding: 5px;
+  border-radius: 50px;
+  color: var(--color-primary);
+  right: 1px;
+  top: 1px;
+  background-color: var(--primary);
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+}
+
+.categories {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+  align-items: center;
+}
+
+.category {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid var(--color-primary);
+  height: 100px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.activeCategory {
+  background-color: var(--primary);
+  color: var(--color-shade);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid var(--color-primary);
+  height: 100px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkboxContainer input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  accent-color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.authorContainer {
+  display: flex;
+  gap: 4px;
+}

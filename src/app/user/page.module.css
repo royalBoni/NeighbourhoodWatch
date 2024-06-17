@@ -1,0 +1,139 @@
+.container {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.upper {
+  background-color: var(--color-secondary);
+  height: 30px;
+  color: var(--primary);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lower {
+  height: calc(100vh - 100px);
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  background-color: var(--primary);
+  color: var(--color-shade);
+  width: 25%;
+  height: 100%;
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--color-shade);
+  padding-bottom: 30px;
+}
+
+.avatar {
+  border-radius: 50px;
+}
+
+.authorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.username {
+  color: var(--color-primary);
+}
+
+.authorContainer span {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  gap: 3px;
+}
+
+.right {
+  background-color: var(--color-shade);
+  width: 75%;
+  height: 100%;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.user {
+  padding-block: 30px;
+  border-bottom: 1px solid var(--color-shade);
+}
+
+.userItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.settings {
+  padding-top: 30px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* REPORTS COMPONENT */
+
+.reportsTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--primary);
+  padding-bottom: 35px;
+}
+
+.reportsTopTop {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.reportsTopItem {
+  border: 1px solid var(--primary);
+  border-radius: 50px;
+  padding-inline: 8px;
+  padding-block: 5px;
+}
+
+.reportsDown {
+  padding-block: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.reportsDownItem {
+  width: 30%;
+}
+
+.analytics {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}
+
+.analyticsItem {
+  height: 100%;
+  width: 50%;
+}

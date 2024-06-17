@@ -1,0 +1,132 @@
+/* @import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/violet.css";
+ */
+.AlertDialogContent {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: rgba(47, 45, 45, 0.696);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AlertDialogContent:focus {
+  outline: none;
+}
+
+.AccordionRoot {
+  border-radius: 6px;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 0 2px 10px pink;
+}
+
+.AccordionItem {
+  overflow: hidden;
+  margin-top: 1px;
+}
+
+.AccordionItem:first-child {
+  margin-top: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.AccordionItem:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.AccordionItem:focus-within {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 2px pink;
+}
+
+.AccordionHeader {
+  display: flex;
+}
+
+.AccordionContent {
+  overflow: hidden;
+}
+.AccordionContent[data-state="open"] {
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.AccordionContent[data-state="closed"] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.AccordionContentText {
+  padding: 15px 20px;
+}
+
+.AccordionChevron {
+  color: var(--violet-10);
+  transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.AccordionTrigger[data-state="open"] > .AccordionChevron {
+  transform: rotate(180deg);
+}
+
+.map {
+  width: 80%;
+  height: 80%;
+}
+
+.map button {
+  background-color: var(--primary);
+  padding: 10px;
+  border-radius: 25px;
+  color: var(--color-primary);
+  border-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map button:hover {
+  background-color: var(--color-shade);
+  color: var(--color-primary);
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+/* || SMALL */
+
+@media screen and (max-width: 576px) {
+  .AlertDialogContent {
+    padding: 0px;
+  }
+}

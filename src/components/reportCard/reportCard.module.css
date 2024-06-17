@@ -1,0 +1,130 @@
+.container {
+  width: 100%;
+  height: auto;
+  background-color: var(--color-secondary);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 25px;
+  position: relative;
+}
+
+.enquiryBtn {
+  position: absolute;
+  background-color: var(--primary);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  color: var(--color-primary);
+  right: 8px;
+  top: 4px;
+  border: 1px solid var(--primary);
+}
+
+.enquiryBtn:hover {
+  background-color: var(--color-shade);
+  cursor: pointer;
+}
+
+.solveState {
+  position: absolute;
+  background-color: var(--color-shade);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  color: var(--color-primary);
+  left: 8px;
+  top: 4px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.containerItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.interactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialsContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.socialsContainerItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background-color: var(--color-shade);
+  padding: 5px 8px;
+
+  border-radius: 40px;
+}
+
+.socialsContainerItem:hover {
+  background-color: white;
+}
+
+.voteBtn {
+  padding: 2px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*   background-color: var(--color-secondary); */
+}
+
+.votedBtn {
+  background-color: aqua;
+}
+
+/* .voteBtn:hover {
+  background-color: var(--color-secondary);
+  cursor: pointer;
+} */
+
+.span {
+  font-weight: bold;
+}
+
+.actionBtns {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  /*  .interactions {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: unset;
+  } */
+
+  .socialsContainer {
+    gap: 8px;
+  }
+
+  .socialsContainerItem {
+    gap: 5px;
+    padding: 4px 6px;
+  }
+}

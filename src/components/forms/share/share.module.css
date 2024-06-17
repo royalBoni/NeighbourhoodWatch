@@ -1,0 +1,40 @@
+.container {
+  width: 50%;
+  height: auto;
+  background-color: var(--color-shade);
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 25px;
+}
+
+.titleClose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px;
+  border-color: var(--color-primary);
+}
+
+.title {
+  color: var(--primary);
+}
+
+.container button {
+  background-color: var(--primary);
+  padding: 10px;
+  border-radius: 25px;
+  color: var(--color-primary);
+  border-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
