@@ -166,7 +166,7 @@ const SinglePostPage = (param) => {
 
   const { mutate, reset, isPending } = useMutation({
     mutationFn: (data) =>
-      fetch("http://localhost:3000/api/comment", {
+      fetch(`${baseUrl}api/comment`, {
         // Using relative path to access API route
         method: "POST",
         body: JSON.stringify({

@@ -12,6 +12,7 @@ import styles from "./createReport.module.css";
 import { Trash2, Ambulance, TrafficCone, Home, BusFront } from "lucide-react";
 import ToastDemo from "../toast/Toast";
 import { FormTextField } from "../form-fields";
+import { baseUrl } from "../../lib/actions";
 import "@radix-ui/themes/styles.css";
 
 import {
@@ -122,7 +123,7 @@ const CreateReportForm = () => {
       formData.append("email", user?.email);
       formData.append("img", imageFile);
       formData.append("numberOfPeopleNeeded", data.numberOfPeopleNeeded);
-      formData.append("skillset", data.Skillset);
+      formData.append("skillSet", data.Skillset);
 
       mutate(formData);
       /* console.log(formData);
@@ -139,10 +140,10 @@ const CreateReportForm = () => {
     mutationFn: (formData) =>
       fetch(
         alertAction === "thread"
-          ? "http://localhost:3000/api/thread"
+          ? `${baseUrl}api/thread`
           : alertAction === "report"
-          ? "http://localhost:3000/api/reports"
-          : "http://localhost:3000/api/campaign",
+          ? `${baseUrl}api/reports`
+          : `${baseUrl}api/campaign`,
         {
           // Using relative path to access API route
           method: "POST",

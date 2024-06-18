@@ -10,6 +10,7 @@ import styles from "./complaint.module.css";
 import ToastDemo from "../../toast/Toast";
 import "@radix-ui/themes/styles.css";
 import { X } from "lucide-react";
+import { baseUrl } from "../../../lib/actions";
 
 const ComplaintForm = () => {
   const fireToast = (duration, message) => {
@@ -44,7 +45,7 @@ const ComplaintForm = () => {
 
   const { mutate, reset, isPending } = useMutation({
     mutationFn: (data) =>
-      fetch("http://localhost:3000/api/complain", {
+      fetch(`${baseUrl}api/complain`, {
         // Using relative path to access API route
         method: "POST",
         body: JSON.stringify({

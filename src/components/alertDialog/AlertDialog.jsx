@@ -111,7 +111,7 @@ const AlertDialogComponent = () => {
                   <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={16}
+                    zoom={18}
                     onLoad={onLoad}
                     onUnmount={onUnmount}
                     options={defaultMapOptions}

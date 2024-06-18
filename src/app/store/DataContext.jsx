@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { baseUrl } from "../../lib/actions";
 
 const DataContext = createContext(undefined);
 
@@ -31,8 +32,7 @@ export const DataProvider = ({ children }) => {
     isLoading: reportersIsLoading,
   } = useQuery({
     queryKey: ["reportersposts"],
-    queryFn: () =>
-      fetch("http://localhost:3000/api/users").then((res) => res.json()),
+    queryFn: () => fetch(`${baseUrl}api/users`).then((res) => res.json()),
     refetchInterval: 4000,
     retry: 5,
   });
@@ -43,8 +43,7 @@ export const DataProvider = ({ children }) => {
     isLoading: reportsLoading,
   } = useQuery({
     queryKey: ["reportsposts"],
-    queryFn: () =>
-      fetch("http://localhost:3000/api/reports").then((res) => res.json()),
+    queryFn: () => fetch(`${baseUrl}api/reports`).then((res) => res.json()),
     refetchInterval: 4000,
     retry: 5,
   });
@@ -55,8 +54,7 @@ export const DataProvider = ({ children }) => {
     isLoading: commentsLoading,
   } = useQuery({
     queryKey: ["commentsposts"],
-    queryFn: () =>
-      fetch("http://localhost:3000/api/comment").then((res) => res.json()),
+    queryFn: () => fetch(`${baseUrl}api/comment`).then((res) => res.json()),
     refetchInterval: 4000,
     retry: 5,
   });
@@ -67,8 +65,18 @@ export const DataProvider = ({ children }) => {
     isLoading: votesLoading,
   } = useQuery({
     queryKey: ["votesposts"],
-    queryFn: () =>
-      fetch("http://localhost:3000/api/votes").then((res) => res.json()),
+    queryFn: () => fetch(`${baseUrl}api/votes`).then((res) => res.json()),
+    refetchInterval: 4000,
+    retry: 5,
+  });
+
+  const {
+    data: campaigns,
+    error: campaignsError,
+    isLoading: campaignsLoading,
+  } = useQuery({
+    queryKey: ["campaignssposts"],
+    queryFn: () => fetch(`${baseUrl}api/campaign`).then((res) => res.json()),
     refetchInterval: 4000,
     retry: 5,
   });
@@ -82,6 +90,7 @@ export const DataProvider = ({ children }) => {
         centerLocation,
         comments,
         votes,
+        campaigns,
         specifyMapLocation,
       }}
     >

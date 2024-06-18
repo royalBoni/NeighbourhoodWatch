@@ -14,7 +14,7 @@ import { Theme } from "@radix-ui/themes";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { decode } from "punycode";
+import { baseUrl } from "../../../lib/actions";
 
 const FormComponent = () => {
   //const methods = useForm({});
@@ -35,8 +35,8 @@ const FormComponent = () => {
     mutationFn: (newPost) =>
       fetch(
         formOperationState === "sign-up"
-          ? "http://localhost:3000/api/users"
-          : "http://localhost:3000/api/users/signin",
+          ? `${baseUrl}api/users`
+          : `${baseUrl}api/users/signin`,
         {
           method: "POST",
           headers: { "Content-type": "application/json; charset=UTF-8" },

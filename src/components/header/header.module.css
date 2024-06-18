@@ -10,6 +10,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -31,8 +32,10 @@
 .brand {
   border: 2px solid var(--color-shade);
   color: var(--color-primary);
-  font-size: 25px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-shade);
 }
 
 .reportButton {

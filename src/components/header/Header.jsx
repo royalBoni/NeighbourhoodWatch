@@ -5,6 +5,7 @@ import { User } from "lucide-react";
 import { Button } from "../button/Button";
 import { useAlertDialogContext } from "../../app/store/AlertDialog";
 import Link from "next/link";
+import Image from "next/image";
 const Header = () => {
   //const [storedUser, setStoredUser] = useState(null);
   const { openOrCloseAlertDialog, specifyAction, alertAction } =
@@ -32,15 +33,16 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.nav}>
-        <div className={styles.brand}>N-W</div>
+        <Link href={"/"} className={styles.brand}>
+          <Image
+            src={"/logo.jpg"}
+            width={50}
+            height={50}
+            alt="logo.jpg"
+            className={styles.logoImage}
+          />
+        </Link>
         <ul className={styles.navItems}>
-          <li>
-            {" "}
-            <Link href={"/"}>
-              <Button className={styles.reportButton}>Home</Button>
-            </Link>
-          </li>
-
           {storedUser ? (
             <>
               {" "}
@@ -60,7 +62,12 @@ const Header = () => {
               </li>
             </>
           ) : (
-            <li onClick={() => setOperations("authenticate")}>Login</li>
+            <Button
+              onClick={() => setOperations("authenticate")}
+              className={styles.reportButton}
+            >
+              Login
+            </Button>
           )}
         </ul>
       </div>

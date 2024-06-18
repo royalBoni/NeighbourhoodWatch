@@ -15,7 +15,7 @@ cloudinary.config({
 export const GET = async (req) => {
   try {
     connectToDb();
-    const reports = await Campaign.find();
+    const campaigns = await Campaign.find();
     return NextResponse.json(campaigns);
   } catch (err) {
     console.log(err);

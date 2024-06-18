@@ -10,6 +10,7 @@ import styles from "./comment.module.css";
 import ToastDemo from "../../toast/Toast";
 import "@radix-ui/themes/styles.css";
 import { X } from "lucide-react";
+import { baseUrl } from "../../../lib/actions";
 
 const CommentForm = () => {
   const fireToast = (duration, message) => {
@@ -43,7 +44,7 @@ const CommentForm = () => {
 
   const { mutate, reset, isPending } = useMutation({
     mutationFn: (data) =>
-      fetch("http://localhost:3000/api/comment", {
+      fetch(`${baseUrl}api/comment`, {
         // Using relative path to access API route
         method: "POST",
         body: JSON.stringify({

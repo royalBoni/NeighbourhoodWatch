@@ -5,7 +5,6 @@ import { Report } from "../../../../lib/model";
 
 export const GET = async (req, param) => {
   const { params } = param;
-  console.log(params.slug);
 
   try {
     connectToDb();

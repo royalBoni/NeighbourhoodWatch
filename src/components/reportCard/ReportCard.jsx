@@ -25,6 +25,7 @@ import Link from "next/link";
 import { useAlertDialogContext } from "../../app/store/AlertDialog";
 import { useDataContext } from "../../app/store/DataContext";
 import { useMutation } from "@tanstack/react-query";
+import { baseUrl } from "../../lib/actions";
 
 const ReportCard = ({ report }) => {
   const [location, setLocation] = useState(null);
@@ -76,8 +77,8 @@ const ReportCard = ({ report }) => {
     mutationFn: (data) =>
       fetch(
         data !== "upvote"
-          ? `http://localhost:3000/api/votes/${report.id}`
-          : "http://localhost:3000/api/votes/",
+          ? `${baseUrl}api/votes/${report.id}`
+          : `${baseUrl}api/votes`,
         {
           // Using relative path to access API route
           method: data !== "upvote" ? "DELETE" : "POST",

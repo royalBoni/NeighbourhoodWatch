@@ -4,6 +4,7 @@ import { useAlertDialogContext } from "../../../app/store/AlertDialog";
 import styles from "./share.module.css";
 import "@radix-ui/themes/styles.css";
 import { X } from "lucide-react";
+import { baseUrl } from "../../../lib/actions";
 import {
   FacebookShareButton,
   WhatsappShareButton,
@@ -18,8 +19,6 @@ import {
 const ShareComponent = () => {
   const storedUserData = sessionStorage.getItem("user");
   const user = storedUserData ? JSON.parse(storedUserData) : null;
-
-  const shareUrl = "http://localhost:3000/";
 
   const { openOrCloseAlertDialog, complaintReportId } = useAlertDialogContext();
 
@@ -36,28 +35,28 @@ const ShareComponent = () => {
       <div className={styles.socials}>
         {" "}
         <FacebookShareButton
-          url={`${shareUrl}${complaintReportId.id}`}
+          url={`${baseUrl}${complaintReportId.id}`}
           quote={complaintReportId.description.trim(0, 30)}
           hashtag={"#reports"}
         >
           <FacebookIcon size={40} round={true} />
         </FacebookShareButton>
         <WhatsappShareButton
-          url={`${shareUrl}${complaintReportId.id}`}
+          url={`${baseUrl}${complaintReportId.id}`}
           quote={complaintReportId.description.trim(0, 30)}
           hashtag={"#reports"}
         >
           <WhatsappIcon size={40} round={true} />
         </WhatsappShareButton>
         <TelegramShareButton
-          url={`${shareUrl}${complaintReportId.id}`}
+          url={`${baseUrl}${complaintReportId.id}`}
           quote={complaintReportId.description.trim(0, 30)}
           hashtag={"#reports"}
         >
           <TelegramIcon size={40} round={true} />
         </TelegramShareButton>
         <TwitterShareButton
-          url={`${shareUrl}${complaintReportId.id}`}
+          url={`${baseUrl}${complaintReportId.id}`}
           quote={complaintReportId.description.trim(0, 30)}
           hashtag={"#reports"}
         >
