@@ -90,7 +90,7 @@ const FormComponent = () => {
   return (
     <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
       <div className={styles.container}>
-        <div className={styles.containerItem}>other side</div>
+        <div className={styles.containerItem}></div>
         <div className={styles.containerItem}>
           <CircleX
             className={styles.closebtn}
