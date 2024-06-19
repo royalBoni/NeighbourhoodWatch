@@ -23,6 +23,7 @@ const FormComponent = () => {
   const { openOrCloseAlertDialog } = useAlertDialogContext();
 
   const [formOperationState, setFormOperationState] = useState("sign-up");
+  const [googleId, setGoogleId] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
   const {
@@ -47,7 +48,7 @@ const FormComponent = () => {
                   email: newPost.email,
                   password: newPost.password,
                   userType: "user",
-                  userBadge: "regular",
+                  userId: newPost.id,
                 }
               : {
                   email: newPost.email,
@@ -129,8 +130,13 @@ const FormComponent = () => {
               className={styles.google}
               onSuccess={(credentialResponse) => {
                 const decoded = jwtDecode(credentialResponse?.credential);
-                console.log(decoded);
                 openOrCloseAlertDialog(false);
+                mutate({
+                  name: decoded.name,
+                  email: decoded.email,
+                  password: "googleauth",
+                  id: decoded.sub,
+                });
                 window.sessionStorage.setItem(
                   "user",
                   JSON.stringify({

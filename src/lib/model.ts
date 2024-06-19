@@ -96,7 +96,6 @@ const reportUserSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: 3,
-      maxlength: 20,
     },
 
     id: {
@@ -123,10 +122,6 @@ const reportUserSchema = new mongoose.Schema(
 
     userType: {
       type: String,
-    },
-    badge: {
-      type: String,
-      required: true,
     },
   },
   { timestamps: true }

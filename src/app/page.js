@@ -11,6 +11,7 @@ import { Spinner } from "@radix-ui/themes";
 import { Search } from "lucide-react";
 import ReportCard from "../components/reportCard/ReportCard";
 import ToastDemo from "../components/toast/Toast";
+import { report } from "process";
 
 export default function Home() {
   const { reports, reportsLoading, centerLocation } = useDataContext();
@@ -42,7 +43,7 @@ export default function Home() {
     infinite: true,
     swipeToSlide: true,
     speed: 7000,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     lazyLoad: true,
     autoplay: true,
@@ -129,7 +130,7 @@ export default function Home() {
     {
       title: "RoyalFood",
       shortIntro:
-        "This is an app that takes a restaurant online and allow customers to make an order online.",
+        "Matulkova 1591/31, 612 00 Brno-Královo Pole, CzechiaJune 18, 2024 11:46:34 Car Accident Report Date and Time of Report: [Date 18/06/2024and 12:43] Report Number: [one] Location of Accident: [semillaso ] Date and Time of Accident: [[Date 18/06/2024and 12:43]] CATEGORY:Road",
     },
   ];
 
@@ -139,8 +140,8 @@ export default function Home() {
       <div className={styles.bulletCarousel}>
         {" "}
         <Slider {...settings}>
-          {projects.map((item) => (
-            <div key={item.shortIntro}>{item.shortIntro}</div>
+          {reports?.slice(20, 35).map((item) => (
+            <div key={item.id}>{item.description}</div>
           ))}
         </Slider>
       </div>

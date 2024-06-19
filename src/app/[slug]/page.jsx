@@ -12,6 +12,7 @@ import { Theme } from "@radix-ui/themes";
 import { useMutation } from "@tanstack/react-query";
 import ToastDemo from "../../components/toast/Toast";
 import CommentCard from "../../components/commentCard/commentCard";
+import { baseUrl } from "../../lib/actions";
 import {
   Clock,
   Trash2,
@@ -209,7 +210,7 @@ const SinglePostPage = (param) => {
                 <div
                   style={{
                     color:
-                      reportData.solveStatus === "Accepted" ? "red" : "black",
+                      reportData.solveStatus === "Accepted" ? "red" : "gold",
                   }}
                   className={styles.status}
                 >
@@ -277,13 +278,13 @@ const SinglePostPage = (param) => {
                 <div>
                   <h3>Category</h3>
                   <div className={styles.category}>
-                    {reportData.reportCategory === "sanitation" ? (
+                    {reportData.reportCategory === "Sanitation" ? (
                       <Trash2 />
-                    ) : reportData.reportCategory === "health" ? (
+                    ) : reportData.reportCategory === "Health" ? (
                       <Ambulance />
-                    ) : reportData.reportCategory === "transportation" ? (
+                    ) : reportData.reportCategory === "Transportation" ? (
                       <BusFront />
-                    ) : reportData.reportCategory === "road" ? (
+                    ) : reportData.reportCategory === "Road" ? (
                       <TrafficCone fill="orange" />
                     ) : (
                       <Home fill="red" />

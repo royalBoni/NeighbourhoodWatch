@@ -204,10 +204,10 @@ const ReportCard = ({ report }) => {
         <Info />
         <span>{report.description}</span>
       </div>
+
       <div className={styles.containerItem}>
-        <FileQuestion /> <span>{report.reportState}</span>
+        CATEGORY:{report.reportCategory}
       </div>
-      <div className={styles.containerItem}>{report.reportCategory}</div>
 
       <div className={styles.interactions}>
         {/* SOCIALS */}

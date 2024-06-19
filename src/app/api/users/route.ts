@@ -33,13 +33,36 @@ export const POST = async (req: Request) => {
     await connectToDb(); // Ensure the database is connected
 
     const body = await req.json(); // Extract data from the request body
-    const { username, email, password, userBadge, userType } = body;
+    const { username, email, password, userType, userId } = body;
 
+    if (password === "googleauth") {
+      const findUser = await ReportUser.find({ email: email });
+
+      if (findUser.length > 0) {
+        return NextResponse.json({
+          message: "Account successfully authenticated",
+        });
+      } else {
+        const newUser = new ReportUser({
+          username,
+          email,
+          password,
+          userBadge: "Associate",
+          userType,
+          id: userId,
+        });
+
+        await newUser.save(); // Save the new chef to the database
+        console.log("Saved to DB");
+
+        return NextResponse.json({ message: "Account created successfully" });
+      }
+    }
     const newUser = new ReportUser({
       username,
       email,
       password,
-      userBadge,
+      userBadge: "Associate",
       userType,
       id: uuidv4(),
     });
