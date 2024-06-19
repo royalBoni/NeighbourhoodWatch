@@ -52,7 +52,7 @@ export const checkIfVotedVotes = (votes, reportId, userId) => {
   return findIfVoted;
 };
 
-export const baseUrl = "http://localhost:3000/";
+export const baseUrl = "https://neighbourhoodwatch.vercel.app/";
 //http://localhost:3000/
 
 //https://neighbourhoodwatch.vercel.app/
