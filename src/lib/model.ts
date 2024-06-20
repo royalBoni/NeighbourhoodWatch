@@ -1,16 +1,20 @@
 import mongoose, { mongo } from "mongoose";
 
-const followSchema = new mongoose.Schema({
-  follow_id: {
+const joinCampaignSchema = new mongoose.Schema({
+  id: {
     type: String,
     required: true,
     unique: true,
   },
-  fan_id: {
+  campaignFanId: {
     type: String,
     required: true,
   },
-  chef_id: {
+  campaignOwnerId: {
+    type: String,
+    required: true,
+  },
+  campaignId: {
     type: String,
     required: true,
   },
@@ -274,6 +278,10 @@ export const ReportComment =
   mongoose.model("ReportComment", ReportCommentSchema);
 
 export const Vote = mongoose.models.Vote || mongoose.model("Vote", voteSchema);
+
+export const JoinCampaign =
+  mongoose.models.JoinCampaign ||
+  mongoose.model("JoinCampaign", joinCampaignSchema);
 
 /* export const Like = mongoose.models.Like || mongoose.model("Like", likeSchema);
 

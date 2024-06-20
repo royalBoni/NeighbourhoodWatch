@@ -81,6 +81,18 @@ export const DataProvider = ({ children }) => {
     retry: 5,
   });
 
+  const {
+    data: joincampaign,
+    error: joincampaignError,
+    isLoading: joincampaignLoading,
+  } = useQuery({
+    queryKey: ["joincampaignsposts"],
+    queryFn: () =>
+      fetch(`${baseUrl}api/joincampaign`).then((res) => res.json()),
+    refetchInterval: 4000,
+    retry: 5,
+  });
+
   return (
     <DataContext.Provider
       value={{
@@ -91,6 +103,7 @@ export const DataProvider = ({ children }) => {
         comments,
         votes,
         campaigns,
+        joincampaign,
         specifyMapLocation,
       }}
     >

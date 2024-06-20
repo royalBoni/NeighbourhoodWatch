@@ -15,20 +15,9 @@ import { FormTextField } from "../form-fields";
 import { baseUrl } from "../../lib/actions";
 import "@radix-ui/themes/styles.css";
 
-import {
-  setKey,
-  setDefaults,
-  setLanguage,
-  setRegion,
-  fromAddress,
-  fromLatLng,
-  fromPlaceId,
-  setLocationType,
-  geocode,
-  RequestType,
-} from "react-geocode";
+import { setDefaults } from "react-geocode";
 
-const allCategories = ["Sanitation", "Road", "Health", "Residential"];
+export const allCategories = ["Sanitation", "Road", "Health", "Residential"];
 
 const CreateReportForm = () => {
   const fireToast = (duration, message) => {
@@ -61,13 +50,7 @@ const CreateReportForm = () => {
     language: "en", // Default language for responses.
     region: "es", // Default region for responses.
   });
-  /* 
-  if ("geolocation" in navigator) {
-    console.log("Geolocation is Available");
-  } else {
-    console.log("Geolocation is NOT Available");
-  }
- */
+
   function success(position) {
     setLocation({
       latitude: position.coords.latitude,
@@ -126,13 +109,6 @@ const CreateReportForm = () => {
       formData.append("skillSet", data.Skillset);
 
       mutate(formData);
-      /* console.log(formData);
-      console.log(category);
-      console.log(location);
-      console.log(data.description);
-      console.log(imageFile);
-      console.log(user?.id);
-      console.log(data.subscribeEmailStatus); */
     }
   };
 
@@ -237,16 +213,7 @@ const CreateReportForm = () => {
 
           {alertAction === "campaign" && (
             <>
-              <FormTextArea
-                name="Skillset"
-                label="Skillset Needed"
-                /*  validateFn={(value) => {
-              if (value.split(" ").length < 1) {
-                return "Please provide a skillset needed or just input Any";
-              }
-              return;
-            }} */
-              />
+              <FormTextArea name="Skillset" label="Skillset Needed" />
 
               <FormTextField
                 name="numberOfPeopleNeeded"

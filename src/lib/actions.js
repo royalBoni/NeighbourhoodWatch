@@ -44,10 +44,23 @@ export const returnNumberOfVotes = (votes, reportId) => {
   const findNumberOfVotes = votes?.filter((vote) => vote.reportId === reportId);
   return findNumberOfVotes?.length;
 };
+export const returnNumberOfJoines = (joincampaign, campaignId) => {
+  const findNumberOfJoins = joincampaign?.filter(
+    (joined) => joined.campaignId === campaignId
+  );
+  return findNumberOfJoins?.length;
+};
 
 export const checkIfVotedVotes = (votes, reportId, userId) => {
   const findIfVoted = votes?.find(
     (vote) => vote.reportId === reportId && vote.userId === userId
+  );
+  return findIfVoted;
+};
+export const checkIfJoined = (joincampaign, campaignId, userId) => {
+  const findIfVoted = joincampaign?.find(
+    (joined) =>
+      joined.campaignId === campaignId && joined.campaignFanId === userId
   );
   return findIfVoted;
 };
