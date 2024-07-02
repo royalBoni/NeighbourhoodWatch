@@ -65,7 +65,7 @@ export const checkIfJoined = (joincampaign, campaignId, userId) => {
   return findIfVoted;
 };
 
-export const baseUrl = "https://neighbourhoodwatch.vercel.app/";
+export const baseUrl = "http://localhost:3000/";
 //http://localhost:3000/
 
 //https://neighbourhoodwatch.vercel.app/
