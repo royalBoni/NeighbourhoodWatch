@@ -154,6 +154,7 @@ export default function Home() {
               <input type="text" placeholder="Search" />
             </div>
           </div>
+          {/* i am sipping some drinks */}
           <div className={styles.inputFields}>
             {filterItem.map((item) => (
               <select
